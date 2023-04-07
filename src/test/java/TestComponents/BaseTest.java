@@ -28,7 +28,7 @@ public class BaseTest {
     public WebDriver intiDriver() throws IOException {
         //Untuk memanggil properties class
         Properties props = new Properties();
-        FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/GlobalData.properties");
+        FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "//src//main//resources//GlobalData.properties");
         props.load(fis);
         String browserName = props.getProperty("browser");
 
@@ -60,9 +60,9 @@ public class BaseTest {
     public String getScreenshot(String testCaseName, WebDriver driver) throws IOException {
         TakesScreenshot ts = (TakesScreenshot) driver; //driver didapatkan di class listener dari setiap class yang dijalankan
         File source = ts.getScreenshotAs(OutputType.FILE);//Output ScreenShot
-        File filePath = new File(System.getProperty("user.dir")+ "/reports/" + testCaseName + ".png");
+        File filePath = new File(System.getProperty("user.dir")+ "//reports//" + testCaseName + ".png");
         FileUtils.copyFile(source, filePath);
-        return System.getProperty("user.dir")+ "/reports/" + testCaseName + ".png";
+        return System.getProperty("user.dir")+ "//reports//" + testCaseName + ".png";
     }
 
     //Ini cara init object landing page biar tidak null
